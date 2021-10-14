@@ -1,0 +1,11 @@
+name: Container
+on: push
+
+jobs:
+  node-docker:
+    runs-on: ubuntu-latest
+    container:
+      image: centos:7
+    steps:
+      - name: List
+        run: yum list
