@@ -6,6 +6,7 @@ import chromedriver_binary
 options = Options()
 # ヘッドレスモード（Linux上で動かすとき必ずこのモードにしておく）
 options.add_argument('--headless')
+options.add_argument('--no-sandbox')
 driver = webdriver.Chrome(options=options)
 driver.get('https://example.com')
 print(driver.current_url)
