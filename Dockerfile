@@ -10,12 +10,6 @@ WORKDIR /root
 RUN yum -y update
 RUN yum install -y https://repo.ius.io/ius-release-el7.rpm
 RUN yum install -y python36u python36u-libs python36u-devel python36u-pip
-
-# ロケーション設定(日本語ロケールを設定)
-RUN localedef -f UTF-8 -i ja_JP ja_JP.UTF-8
-ENV LANG="ja_JP.UTF-8" \
-    LANGUAGE="ja_JP:ja" \
-    LC_ALL="ja_JP.UTF-8"
     
 COPY google.chrome.repo /etc/yum.repos.d/google.chrome.repo
 RUN yum install -y google-chrome-stable
