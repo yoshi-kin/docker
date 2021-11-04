@@ -1,4 +1,7 @@
-on: [push]
+on: 
+  push:
+    branches:
+      - 0.0.1
 
 jobs:
   test_selenium:
