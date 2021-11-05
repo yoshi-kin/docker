@@ -1,3 +1,4 @@
+name: docker_selenium_2
 on: 
   pull_request:
     branches:
