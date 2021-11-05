@@ -19,10 +19,3 @@ RUN pip3 install chromedriver-binary==94.*
 
 COPY test_selenium.py /test_selenium.py
 ENTRYPOINT python3 test_selenium.py
-
-# requirements.txtに記載されたパッケージをインストール
-# ADD requirements.txt /root
-# RUN echo `pwd`
-# RUN ls -al
-# RUN pip3 install --upgrade pip
-# RUN pip3 install -r requirements.txt
