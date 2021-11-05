@@ -1,4 +1,4 @@
-name: test-selenium
+name: selenium
 on: 
   push:
     branches:
