@@ -12,4 +12,4 @@ driver = webdriver.Chrome(options=options)
 driver.get('https://example.com')
 print(driver.current_url)
 
-driver.quit()
+driver.close()
