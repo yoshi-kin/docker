@@ -1,4 +1,4 @@
-name: docker_selenium
+name: docker_selenium_1
 on:
   push:
     paths:
