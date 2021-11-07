@@ -19,16 +19,11 @@ jobs:
           yum -y update
           yum install -y https://repo.ius.io/ius-release-el7.rpm
           yum install -y python36u python36u-libs python36u-devel python36u-pip
-          python3 --version
       -
         name: Install Chrome
         run: |
           cp google.chrome.repo /etc/yum.repos.d/google.chrome.repo
           yum install -y google-chrome-stable
-          google-chrome --version
-#       yum -y install wget
-#       wget https://archive.org/download/Google-Chrome-Legacy-Versions/google-chrome-stable-50.0.2661.86-1.x86_64.rpm
-#       yum -y install /google-chrome*.rpm
       -
         name: Install Package
         run: |
