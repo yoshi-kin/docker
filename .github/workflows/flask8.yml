@@ -1,25 +1,24 @@
-name: test_flake8
+name: flake8 Lint
 on:
   pull_request:
     branches:
       - main
 jobs:
-  flake8:
+  flake8-lint:
     runs-on: ubuntu-latest
     steps:
       - 
         name: Checkout Repository
         uses: actions/checkout@v2
       - 
-        name: Setup Python
+        name: Set up Python
         uses: actions/setup-python@v2
       - 
-        name: Install Package
-        run: |
-          pip install flask
-          pip install flask[async]
-          pip install httpx
-          pip install flake8
-      -
-        name: Check Flake8
-        run: find . -name "*.py" -exec flake8 {} \;
+        name: Flake8 Lint
+        uses: py-actions/flake8@v1
+        with:
+          ignore: "F401"
+          # exclude: "src/ignoreme.py"
+          # max-line-length: "100"
+          path: "."
+        # run: find . -name "*.py" -exec flake8 {} \;
