@@ -1,9 +1,8 @@
 name: docker_selenium_2
 on: 
   pull_request:
-    branches:
-      - main
-
+    paths:
+      - '*py'
 jobs:
   test_selenium:
     runs-on: ubuntu-latest
