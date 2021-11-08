@@ -2,7 +2,7 @@ name: docker_selenium_1
 on:
   push:
     paths:
-      - '*.py'
+      - '*.js'
 
 jobs:
   docker:

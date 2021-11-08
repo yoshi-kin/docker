@@ -2,7 +2,7 @@ name: docker_selenium_2
 on: 
   pull_request:
     paths:
-      - '*py'
+      - '*js'
 jobs:
   test_selenium:
     runs-on: ubuntu-latest
