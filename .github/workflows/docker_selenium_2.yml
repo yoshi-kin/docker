@@ -3,7 +3,6 @@ on:
   pull_request:
     paths:
       - '*py'
-
 jobs:
   test_selenium:
     runs-on: ubuntu-latest
