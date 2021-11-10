@@ -2,7 +2,6 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import chromedriver_binary
-import os, time
 
 options = Options()
 # ヘッドレスモード（Linux上で動かすとき必ずこのモードにしておく）
