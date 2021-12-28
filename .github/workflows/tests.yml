@@ -47,7 +47,7 @@ jobs:
       -
         name: Run pytest
         shell: bash
-        run: ls -al
+        run: pytest > pytest_result.txt
       -
         name: Upload result for job pytest
         uses: actions/upload-artifact@v2
