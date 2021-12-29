@@ -31,6 +31,8 @@ jobs:
           POSTGRES_PORT: 5432
           POSTGRES_PASSWORD: postgres
           POSTGRES_DB: in_system
+        volumes:
+          - tests/sql/create_table.sql:/docker-entrypoint-initdb.d
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -43,9 +45,6 @@ jobs:
       -
         name: Set up Python
         uses: actions/setup-python@v2
-      - 
-        name: Run SQL
-        run: psql -f /tests/sql/create_table.sql -U postgres -d in_system
       -
         name: Install Pytest Library
         run: |
