@@ -49,11 +49,13 @@ jobs:
       -
         name: Run pytest
         shell: bash
-        run: pytest
+        run: |
+          pytest --cov=. --cov-report=html
+          open htmlcov/index.html
       -
         name: Upload result for job pytest
         uses: actions/upload-artifact@v2
         with:
           name: pytest coverage
-          path: .coverage
+          path: htmlcov/index.html
           retention-days: 30
