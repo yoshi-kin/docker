@@ -43,6 +43,9 @@ jobs:
       -
         name: Set up Python
         uses: actions/setup-python@v2
+      - 
+        name: Run SQL
+        run: psql -f /tests/sql/create_table.sql -U postgres -d in_system
       -
         name: Install Pytest Library
         run: |
