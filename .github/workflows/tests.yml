@@ -31,8 +31,6 @@ jobs:
           POSTGRES_PORT: 5432
           POSTGRES_PASSWORD: postgres
           POSTGRES_DB: in_system
-        volumes:
-          - tests/sql/create_table.sql:/docker-entrypoint-initdb.d
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -45,6 +43,9 @@ jobs:
       -
         name: Set up Python
         uses: actions/setup-python@v2
+      -
+        name: Create Table
+        run: psql -U postgres -d in_system -f tests/sql/create_table.sql
       -
         name: Install Pytest Library
         run: |
@@ -62,5 +63,5 @@ jobs:
           path: htmlcov
           retention-days: 30
       - 
-        name: Remove Garvage
+        name: Remove Coverage
         run: rm .coverage
