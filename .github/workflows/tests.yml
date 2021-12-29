@@ -43,6 +43,9 @@ jobs:
       -
         name: Set up Python
         uses: actions/setup-python@v2
+      - 
+        name: Startup Postgres
+        run: sudo /etc/init.d/postgresql start
       -
         name: Create Table
         run: psql -U postgres -d in_system -f tests/sql/create_table.sql
