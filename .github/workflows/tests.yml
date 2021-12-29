@@ -47,7 +47,7 @@ jobs:
         run: sudo /etc/init.d/postgresql start
       -
         name: Create Table
-        run: psql -p 5432 -U postgres -d in_system -f tests/sql/create_table.sql
+        run: POSTGRES_PASSWORD=postgres psql -p 5432 -U postgres -d in_system -f tests/sql/create_table.sql
       -
         name: Install Pytest Library
         run: |
