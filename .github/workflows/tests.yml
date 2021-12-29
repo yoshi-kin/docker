@@ -49,9 +49,7 @@ jobs:
       -
         name: Run pytest
         shell: bash
-        run: |
-          pytest --cov=. --cov-report=html
-          open htmlcov/index.html
+        run: pytest --cov=. --cov-report=html
       -
         name: Upload result for job pytest
         uses: actions/upload-artifact@v2
