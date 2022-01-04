@@ -44,7 +44,7 @@ jobs:
         uses: actions/setup-python@v2
       - 
         name: Build Docker Imgae
-        run: docker build -f Dockerifle
+        run: docker build -f Dockerfile
       -
         name: Run Docker Container
         run: docker run -p 5432:5432
