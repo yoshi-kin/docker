@@ -22,19 +22,19 @@ jobs:
     needs: flake8-lint
     runs-on: ubuntu-latest
     # setup postgres on docker
-    services:
-      postgres:
-        image: postgres
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_PORT: 5432
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: in_system
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
+    # services:
+    #   postgres:
+    #     image: postgres
+    #     env:
+    #       POSTGRES_USER: postgres
+    #       POSTGRES_PORT: 5432
+    #       POSTGRES_PASSWORD: postgres
+    #       POSTGRES_DB: in_system
+    #     options: >-
+    #       --health-cmd pg_isready
+    #       --health-interval 10s
+    #       --health-timeout 5s
+    #       --health-retries 5
     steps:
       -
         name: Checkout Repository
@@ -43,11 +43,14 @@ jobs:
         name: Set up Python
         uses: actions/setup-python@v2
       - 
-        name: Startup Postgres
-        run: sudo /etc/init.d/postgresql start
-      -
-        name: Create Table
-        run: POSTGRES_PASSWORD=postgres psql -p 5432 -U postgres -d in_system -f tests/sql/create_table.sql
+        name: Build Docker
+        uses: ./
+      # - 
+      #   name: Startup Postgres
+      #   run: sudo /etc/init.d/postgresql start
+      # -
+      #   name: Create Table
+      #   run: POSTGRES_PASSWORD=postgres psql -p 5432 -U postgres -d in_system -f tests/sql/create_table.sql
       -
         name: Install Pytest Library
         run: |

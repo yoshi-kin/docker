@@ -1,4 +1,4 @@
-FROM centos:7
+FROM postgres
 
 # デフォルトシェルの指定
 SHELL ["/bin/bash", "-c"]
@@ -6,16 +6,14 @@ SHELL ["/bin/bash", "-c"]
 # ホームディレクトリ(/root)に移動
 WORKDIR /root
 
-# 必要なパッケージをインストール
-RUN yum -y update
-RUN yum install -y https://repo.ius.io/ius-release-el7.rpm
-RUN yum install -y python36u python36u-libs python36u-devel python36u-pip
+# postgresサービス起動
+RUN sudo /etc/init.d/postgresql start
+
+ENV POSTGRES_USER=postgres
+ENV POSTGRES_PORT=5432
+ENV POSTGRES_PASSWORD=postgres
+ENV POSTGRES_DB=in_system
+
+EXPOSE 5432
     
-COPY google.chrome.repo /etc/yum.repos.d/google.chrome.repo
-RUN yum install -y google-chrome-stable
-
-RUN pip3 install selenium
-RUN pip3 install chromedriver-binary==94.*
-
-COPY test_selenium.py /test_selenium.py
-ENTRYPOINT python3 test_selenium.py
+COPY ./sql/1_create_table.sql ./docker-entrypoint-initdb.d
