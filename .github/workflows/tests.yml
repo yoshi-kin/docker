@@ -53,10 +53,11 @@ jobs:
       #   name: Create Table
       #   run: POSTGRES_PASSWORD=postgres psql -p 5432 -U postgres -d in_system -f tests/sql/create_table.sql
       -
-        name: Install Pytest Library
+        name: Install Required Library
         run: |
           pip install pytest
           pip install pytest-cov
+          pip install psycopg2
       -
         name: Run pytest
         shell: bash
