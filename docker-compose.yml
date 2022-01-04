@@ -3,9 +3,9 @@ version: '3'
 services:
   postgres:
     container_name: postgres for pytest
-    build: .
+    image: postgres:latest
     port:
-      -"5432:5432"
+      - 5432:5432
     volumes:
       - docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
     environment:
