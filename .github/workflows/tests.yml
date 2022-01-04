@@ -43,11 +43,9 @@ jobs:
         name: Set up Python
         uses: actions/setup-python@v2
       - 
-        name: Build Docker Imgae
-        run: docker build .
-      -
-        name: Run Docker Container
-        run: docker run -p 5432:5432
+        name: Build Image & Run Container
+        run: docker compose up -d --build
+
       # - 
       #   name: Startup Postgres
       #   run: sudo /etc/init.d/postgresql start
