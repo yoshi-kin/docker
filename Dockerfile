@@ -7,7 +7,7 @@ SHELL ["/bin/bash", "-c"]
 WORKDIR /root
 
 # postgresサービス起動
-RUN sudo /etc/init.d/postgresql start
+RUN /etc/init.d/postgresql start
 
 ENV POSTGRES_USER=postgres
 ENV POSTGRES_PORT=5432
@@ -16,4 +16,4 @@ ENV POSTGRES_DB=in_system
 
 EXPOSE 5432
     
-COPY ./sql/1_create_table.sql ./docker-entrypoint-initdb.d
+COPY ./sql/1_create_table.sql /docker-entrypoint-initdb.d
