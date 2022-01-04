@@ -43,8 +43,11 @@ jobs:
         name: Set up Python
         uses: actions/setup-python@v2
       - 
-        name: Build Docker
-        uses: ./
+        name: Build Docker Imgae
+        run: docker build -f Dockerifle
+      -
+        name: Run Docker Container
+        run: docker run -p 5432:5432
       # - 
       #   name: Startup Postgres
       #   run: sudo /etc/init.d/postgresql start
