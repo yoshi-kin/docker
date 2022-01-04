@@ -2,7 +2,7 @@ version: '3'
 
 services:
   postgres:
-    container_name: postgres for pytest
+    container_name: postgres_for_pytest
     image: postgres:latest
     ports:
       - "5432:5432"
