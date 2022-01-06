@@ -301,105 +301,105 @@ create table mail_send_list (
 
 
 
--- -- エンジニアスキル管理
--- create table engineer_skill (
---   engineer_id integer not null
---   , skill_id integer not null
---   , category varchar(4)
---   , skill_code varchar(4)
---   , skill_level varchar(4)
---   , skill_tsuki integer
---   , skill_memo text
---   , status char(1) default '0' not null
---   , created_id varchar(100)
---   , updated_id varchar(100)
---   , created_at timestamp default NOW()
---   , updated_at timestamp default NOW()
---   , constraint engineer_skill_PKC primary key (engineer_id,skill_id)
--- ) ;
+-- エンジニアスキル管理
+create table engineer_skill (
+  engineer_id integer not null
+  , skill_id integer not null
+  , category varchar(4)
+  , skill_code varchar(4)
+  , skill_level varchar(4)
+  , skill_tsuki integer
+  , skill_memo text
+  , status char(1) default '0' not null
+  , created_id varchar(100)
+  , updated_id varchar(100)
+  , created_at timestamp default NOW()
+  , updated_at timestamp default NOW()
+  , constraint engineer_skill_PKC primary key (engineer_id,skill_id)
+) ;
 
 
--- -- エンジニア管理
--- create table engineer (
---   engineer_id integer not null
---   , name1 varchar(100) not null
---   , name2 varchar(100)
---   , kana1 varchar(100) not null
---   , kana2 varchar(100)
---   , initial varchar(5)
---   , birthdate varchar(200)
---   , email varchar(200)
---   , gender varchar(1)
---   , station varchar(100)
---   , tankin varchar(100)
---   , kadou_tsuki varchar(100)
---   , eigyo varchar(100)
---   , shozoku_code varchar(1) not null
---   , shozoku_memo text
---   , eigyo_memo text
---   , status char(1) default '0' not null
---   , created_id varchar(100)
---   , updated_id varchar(100)
---   , created_at timestamp default NOW()
---   , updated_at timestamp default NOW()
---   , constraint engineer_PKC primary key (engineer_id)
--- ) ;
+-- エンジニア管理
+create table engineer (
+  engineer_id integer not null
+  , name1 varchar(100) not null
+  , name2 varchar(100)
+  , kana1 varchar(100) not null
+  , kana2 varchar(100)
+  , initial varchar(5)
+  , birthdate varchar(200)
+  , email varchar(200)
+  , gender varchar(1)
+  , station varchar(100)
+  , tankin varchar(100)
+  , kadou_tsuki varchar(100)
+  , eigyo varchar(100)
+  , shozoku_code varchar(1) not null
+  , shozoku_memo text
+  , eigyo_memo text
+  , status char(1) default '0' not null
+  , created_id varchar(100)
+  , updated_id varchar(100)
+  , created_at timestamp default NOW()
+  , updated_at timestamp default NOW()
+  , constraint engineer_PKC primary key (engineer_id)
+) ;
 
 
--- -- 名称管理
--- create table item (
---   item varchar(6) default '0' not null
---   , key varchar(100) not null
---   , value varchar(100)
---   , sort int default 0
---   , free jsonb not null
---   , status char(1) default '0' not null
---   , created_id varchar(100)
---   , updated_id varchar(100)
---   , created_at timestamp default NOW()
---   , updated_at timestamp default NOW()
---   , constraint item_PKC primary key (item,key)
--- ) ;
-
-
-
--- -- 顧客営業
--- create table eigyo (
---   company_id integer not null
---   , eigyo_id integer not null
---   , eigyo_code char(1) default '0'
---   , name1 varchar(100) not null
---   , name2 varchar(100)
---   , kana1 varchar(100) not null
---   , kana2 varchar(100)
---   , email varchar(20)
---   , phone varchar(20)
---   , gaihyo text
---   , anken char(1) default '0'
---   , jinzai char(1) default '0'
---   , status char(1) default '0' not null
---   , created_id varchar(100)
---   , updated_id varchar(100)
---   , created_at timestamp default NOW()
---   , updated_at timestamp default NOW()
---   , constraint eigyo_PKC primary key (company_id,eigyo_id)
--- ) ;
+-- 名称管理
+create table item (
+  item varchar(6) default '0' not null
+  , key varchar(100) not null
+  , value varchar(100)
+  , sort int default 0
+  , free jsonb not null
+  , status char(1) default '0' not null
+  , created_id varchar(100)
+  , updated_id varchar(100)
+  , created_at timestamp default NOW()
+  , updated_at timestamp default NOW()
+  , constraint item_PKC primary key (item,key)
+) ;
 
 
 
--- -- 顧客概評履歴
--- create table NEW_ENTITY1 (
---   company_id integer not null
---   , gaihyo_id integer not null
---   , hyouka varchar(2)
---   , gaihyo text
---   , status char(1) default '0' not null
---   , created_id varchar(100)
---   , updated_id varchar(100)
---   , created_at timestamp default NOW()
---   , updated_at timestamp default NOW()
---   , constraint NEW_ENTITY1_PKC primary key (company_id,gaihyo_id)
--- ) ;
+-- 顧客営業
+create table eigyo (
+  company_id integer not null
+  , eigyo_id integer not null
+  , eigyo_code char(1) default '0'
+  , name1 varchar(100) not null
+  , name2 varchar(100)
+  , kana1 varchar(100) not null
+  , kana2 varchar(100)
+  , email varchar(20)
+  , phone varchar(20)
+  , gaihyo text
+  , anken char(1) default '0'
+  , jinzai char(1) default '0'
+  , status char(1) default '0' not null
+  , created_id varchar(100)
+  , updated_id varchar(100)
+  , created_at timestamp default NOW()
+  , updated_at timestamp default NOW()
+  , constraint eigyo_PKC primary key (company_id,eigyo_id)
+) ;
+
+
+
+-- 顧客概評履歴
+create table NEW_ENTITY1 (
+  company_id integer not null
+  , gaihyo_id integer not null
+  , hyouka varchar(2)
+  , gaihyo text
+  , status char(1) default '0' not null
+  , created_id varchar(100)
+  , updated_id varchar(100)
+  , created_at timestamp default NOW()
+  , updated_at timestamp default NOW()
+  , constraint NEW_ENTITY1_PKC primary key (company_id,gaihyo_id)
+) ;
 
 
 
