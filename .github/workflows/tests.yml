@@ -45,7 +45,6 @@ jobs:
       - 
         name: Build Image & Run Container
         run: docker compose up -d --build
-
       # - 
       #   name: Startup Postgres
       #   run: sudo /etc/init.d/postgresql start
