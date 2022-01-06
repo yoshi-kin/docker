@@ -144,25 +144,25 @@ create table juchu (
 
 
 -- 請求明細
-create table seikyu_detail (
-  seikyu_detail_id integer not null
-  , seikyu_id integer not null
-  , rireki_no integer not null
-  , engineer_id integer
-  , total_kadou_jikan integer
-  , kijungai_kadou_jikan integer
-  , kijun_gaku integer
-  , kijungai_gaku integer
-  , goukei integer
-  , koutsuhi integer
-  , bikou varchar
-  , status char(1) default '0' not null
-  , created_id varchar(100)
-  , updated_id varchar(100)
-  , created_at timestamp default NOW()
-  , updated_at timestamp default NOW()
-  , constraint seikyu_detail_PKC primary key (seikyu_detail_id,seikyu_id,rireki_no)
-) ;
+-- create table seikyu_detail (
+--   seikyu_detail_id integer not null
+--   , seikyu_id integer not null
+--   , rireki_no integer not null
+--   , engineer_id integer
+--   , total_kadou_jikan integer
+--   , kijungai_kadou_jikan integer
+--   , kijun_gaku integer
+--   , kijungai_gaku integer
+--   , goukei integer
+--   , koutsuhi integer
+--   , bikou varchar
+--   , status char(1) default '0' not null
+--   , created_id varchar(100)
+--   , updated_id varchar(100)
+--   , created_at timestamp default NOW()
+--   , updated_at timestamp default NOW()
+--   , constraint seikyu_detail_PKC primary key (seikyu_detail_id,seikyu_id,rireki_no)
+-- ) ;
 
 
 -- 請求
