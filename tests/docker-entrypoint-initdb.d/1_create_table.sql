@@ -164,37 +164,37 @@ create table seikyu_detail (
 
 
 -- 請求
--- create table seikyu (
---   seikyu_id integer not null
---   , rireki_no integer not null
---   , seikyu_no varchar(100) not null
---   , seikyu_date timestamp
---   , company_id integer
---   , seikyu_kingaku integer
---   , furikomi_kijitsu timestamp
---   , moto_yuubin_no varchar(20)
---   , moto_address varchar(100)
---   , moto_company_name varchar(100)
---   , moto_phone_no varchar(20)
---   , moto_fax_no varchar(20)
---   , kenmei varchar(100)
---   , shoukei integer
---   , koutsuhi integer
---   , shouhizei integer
---   , goukei integer
---   , furikomi_bank_name varchar(100)
---   , furikomi_shiten_name varchar(100)
---   , furikomi_kouza_shubetsu varchar(20)
---   , furikomi_kouza_no varchar(20)
---   , furikomi_kouza_meigi varchar(100)
---   , bikou varchar
---   , status char(1) default '0' not null
---   , created_id varchar(100)
---   , updated_id varchar(100)
---   , created_at timestamp default NOW()
---   , updated_at timestamp default NOW()
---   , constraint seikyu_PKC primary key (seikyu_id,rireki_no)
--- ) ;
+create table seikyu (
+  seikyu_id integer not null
+  , rireki_no integer not null
+  , seikyu_no varchar(100) not null
+  , seikyu_date timestamp
+  , company_id integer
+  , seikyu_kingaku integer
+  , furikomi_kijitsu timestamp
+  , moto_yuubin_no varchar(20)
+  , moto_address varchar(100)
+  , moto_company_name varchar(100)
+  , moto_phone_no varchar(20)
+  , moto_fax_no varchar(20)
+  , kenmei varchar(100)
+  , shoukei integer
+  , koutsuhi integer
+  , shouhizei integer
+  , goukei integer
+  , furikomi_bank_name varchar(100)
+  , furikomi_shiten_name varchar(100)
+  , furikomi_kouza_shubetsu varchar(20)
+  , furikomi_kouza_no varchar(20)
+  , furikomi_kouza_meigi varchar(100)
+  , bikou varchar
+  , status char(1) default '0' not null
+  , created_id varchar(100)
+  , updated_id varchar(100)
+  , created_at timestamp default NOW()
+  , updated_at timestamp default NOW()
+  , constraint seikyu_PKC primary key (seikyu_id,rireki_no)
+) ;
 
 
 -- -- 顧客案件
