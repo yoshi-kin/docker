@@ -24,20 +24,16 @@ create table tag_read_history (
 ) ;
 
 
--- -- タグリスト
--- --* BackupToTempTable
--- drop table nfc.tag_list cascade;
-
--- --* RestoreFromTempTable
--- create table nfc.tag_list (
---   tag_id VARCHAR2(100) not null
---   , place_id VARCHAR2(100)
---   , created_id varchar(100)
---   , updated_id varchar(100)
---   , created_at timestamp default NOW()
---   , updated_at timestamp default NOW()
---   , constraint tag_list_PKC primary key (tag_id)
--- ) ;
+-- タグリスト
+create table nfc.tag_list (
+  tag_id varchar(100) not null
+  , place_id varchar(100)
+  , created_id varchar(100)
+  , updated_id varchar(100)
+  , created_at timestamp default NOW()
+  , updated_at timestamp default NOW()
+  , constraint tag_list_PKC primary key (tag_id)
+) ;
 
 
 -- -- NFCメニュー画面
