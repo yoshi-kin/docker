@@ -30,9 +30,7 @@ jobs:
         uses: actions/setup-python@v2
       - 
         name: Build Image & Run Container
-        run: |
-          cd tests
-          docker compose up -d --build
+        run: cd tests | docker compose up -d --build
       -
         name: Install Required Library
         run: |
@@ -42,10 +40,7 @@ jobs:
       -
         name: Run pytest
         shell: bash
-        run: |
-          cd tests
-          pytest
-          ls -al
+        run: cd tests | pytest
       -
         name: Upload result for job pytest
         uses: actions/upload-artifact@v2
@@ -56,5 +51,4 @@ jobs:
       - 
         name: Remove Coverage
         run: |
-          pwd
-          rm .coverage
+          rm tests/.coverage
