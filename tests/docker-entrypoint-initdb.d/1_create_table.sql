@@ -13,16 +13,16 @@ create table if not exists users (
 
 -- -- タグ読み込み履歴
 
-create table tag_read_history (
-  history_no integer default NEXTVAL(history_no) not null
-  , menu_no integer
-  , tag_id VARCHAR(200)
-  , created_id varchar(100)
-  , updated_id varchar(100)
-  , created_at timestamp default NOW()
-  , updated_at timestamp default NOW()
-  , constraint tag_read_history_PKC primary key (history_no)
-) ;
+-- create table tag_read_history (
+--   history_no integer default NEXTVAL(history_no) not null
+--   , menu_no integer
+--   , tag_id VARCHAR(200)
+--   , created_id varchar(100)
+--   , updated_id varchar(100)
+--   , created_at timestamp default NOW()
+--   , updated_at timestamp default NOW()
+--   , constraint tag_read_history_PKC primary key (history_no)
+-- ) ;
 
 
 -- -- タグリスト
@@ -88,38 +88,34 @@ create table juchu_meisai (
 ) ;
 
 
--- -- 提案
--- --* BackupToTempTable
--- drop table teian_meisai cascade;
-
--- --* RestoreFromTempTable
--- create table teian_meisai (
---   teian_id integer not null
---   , meisai_no integer not null
---   , engineer_id integer not null
---   , subject varchar(200)
---   , message text
---   , name1 varchar(100) not null
---   , name2 varchar(100)
---   , kana1 varchar(100) not null
---   , kana2 varchar(100)
---   , initial varchar(5)
---   , birthdate varchar(200)
---   , email varchar(200)
---   , gender varchar(1)
---   , station varchar(100)
---   , tankin varchar(100)
---   , kadou_tsuki varchar(100)
---   , eigyo varchar(100)
---   , shozoku_code varchar(1) not null
---   , shozoku_memo text
---   , eigyo_memo text
---   , created_id varchar(100)
---   , updated_id varchar(100)
---   , created_at timestamp default NOW()
---   , updated_at timestamp default NOW()
---   , constraint teian_meisai_PKC primary key (teian_id,meisai_no)
--- ) ;
+-- 提案
+create table teian_meisai (
+  teian_id integer not null
+  , meisai_no integer not null
+  , engineer_id integer not null
+  , subject varchar(200)
+  , message text
+  , name1 varchar(100) not null
+  , name2 varchar(100)
+  , kana1 varchar(100) not null
+  , kana2 varchar(100)
+  , initial varchar(5)
+  , birthdate varchar(200)
+  , email varchar(200)
+  , gender varchar(1)
+  , station varchar(100)
+  , tankin varchar(100)
+  , kadou_tsuki varchar(100)
+  , eigyo varchar(100)
+  , shozoku_code varchar(1) not null
+  , shozoku_memo text
+  , eigyo_memo text
+  , created_id varchar(100)
+  , updated_id varchar(100)
+  , created_at timestamp default NOW()
+  , updated_at timestamp default NOW()
+  , constraint teian_meisai_PKC primary key (teian_id,meisai_no)
+) ;
 
 
 -- -- 受注
