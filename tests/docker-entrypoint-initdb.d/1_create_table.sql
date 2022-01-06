@@ -13,9 +13,9 @@ create table if not exists users (
 -- -- タグ読み込み履歴
 
 create table tag_read_history (
-  history_no integer default NEXTVAL(history_no) not null
+  history_no integer not null
   , menu_no integer
-  , tag_id VARCHAR(200)
+  , tag_id varchar(200)
   , created_id varchar(100)
   , updated_id varchar(100)
   , created_at timestamp default NOW()
