@@ -106,39 +106,39 @@ create table teian_meisai (
 
 
 -- 受注
--- create table juchu (
---   juchu_id integer not null
---   , rireki_no integer not null
---   , juchu_no varchar(100) not null
---   , juchu_date timestamp
---   , o_juchu_id integer
---   , o_rireki_no integer
---   , company_id integer not null
---   , kenmei varchar(100)
---   , shiharai_site integer
---   , shiharai_site_memo varchar(100)
---   , keiyaku_type varchar(10)
---   , nounyu_bukken varchar(100)
---   , nounyu_kijitsu timestamp
---   , nounyu_basho varchar(100)
---   , kenshu_houhou varchar(100)
---   , shiharai_jouken varchar(100)
---   , tousha_sekininsha varchar(20)
---   , kisha_tantousha varchar(20)
---   , chiteki_zaisanken varchar(100)
---   , shiharaigaku_santei varchar(20)
---   , kijun_jikan varchar(50)
---   , jikan_tanka_santei varchar(100)
---   , goukei integer
---   , bikou varchar
---   , tokki_jikou varchar
---   , status char(1) default '0' not null
---   , created_id varchar(100)
---   , updated_id varchar(100)
---   , created_at timestamp default NOW()
---   , updated_at timestamp default NOW()
---   , constraint juchu_PKC primary key (juchu_id,rireki_no)
--- ) ;
+create table juchu (
+  juchu_id integer not null
+  , rireki_no integer not null
+  , juchu_no varchar(100) not null
+  , juchu_date timestamp
+  , o_juchu_id integer
+  , o_rireki_no integer
+  , company_id integer not null
+  , kenmei varchar(100)
+  , shiharai_site integer
+  , shiharai_site_memo varchar(100)
+  , keiyaku_type varchar(10)
+  , nounyu_bukken varchar(100)
+  , nounyu_kijitsu timestamp
+  , nounyu_basho varchar(100)
+  , kenshu_houhou varchar(100)
+  , shiharai_jouken varchar(100)
+  , tousha_sekininsha varchar(20)
+  , kisha_tantousha varchar(20)
+  , chiteki_zaisanken varchar(100)
+  , shiharaigaku_santei varchar(20)
+  , kijun_jikan varchar(50)
+  , jikan_tanka_santei varchar(100)
+  , goukei integer
+  , bikou varchar
+  , tokki_jikou varchar
+  , status char(1) default '0' not null
+  , created_id varchar(100)
+  , updated_id varchar(100)
+  , created_at timestamp default NOW()
+  , updated_at timestamp default NOW()
+  , constraint juchu_PKC primary key (juchu_id,rireki_no)
+) ;
 
 
 -- 請求明細
