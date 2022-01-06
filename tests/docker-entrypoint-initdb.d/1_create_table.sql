@@ -66,7 +66,7 @@ create table if not exists users (
 
 -- 受注明細
 --* BackupToTempTable
-drop table juchu_meisai cascade;
+-- drop table juchu_meisai cascade;
 
 --* RestoreFromTempTable
 create table juchu_meisai (
