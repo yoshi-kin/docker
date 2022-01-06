@@ -43,6 +43,7 @@ jobs:
         name: Run pytest
         shell: bash
         run: |
+          cd tests
           pytest
           ls -al
       -
