@@ -24,55 +24,55 @@ create table tag_read_history (
 ) ;
 
 
--- タグリスト
-create table nfc.tag_list (
-  tag_id integer not null
-  , place_id varchar(100)
-  , created_id varchar(100)
-  , updated_id varchar(100)
-  , created_at timestamp default NOW()
-  , updated_at timestamp default NOW()
-  , constraint tag_list_PKC primary key (tag_id)
-) ;
-
-
--- NFCメニュー画面
-create table nfc.menu (
-  menu_no integer not null
-  , type varchar(2)
-  , sort integer default 0
-  , name varchar(50)
-  , value varchar(100)
-  , innerhtml text
-  , created_id varchar(100)
-  , updated_id varchar(100)
-  , created_at timestamp default NOW()
-  , updated_at timestamp default NOW()
-  , constraint menu_PKC primary key (menu_no)
-) ;
-
-
--- 受注明細
--- create table juchu_meisai (
---   juchu_id integer not null
---   , rireki_no integer not null
---   , meisai_no integer not null
---   , engineer_id integer
---   , sagyou_start_date timestamp
---   , sagyou_end_date timestamp
---   , kousuu integer
---   , kihon_getsugaku integer
---   , shiharai_kingaku integer
---   , gengaku_tanka integer
---   , chouka_tanka integer
---   , bikou varchar
---   , status char(1) default '0' not null
+-- -- タグリスト
+-- create table nfc.tag_list (
+--   tag_id integer not null
+--   , place_id varchar(100)
 --   , created_id varchar(100)
 --   , updated_id varchar(100)
 --   , created_at timestamp default NOW()
 --   , updated_at timestamp default NOW()
---   , constraint juchu_meisai_PKC primary key (juchu_id,rireki_no,meisai_no)
+--   , constraint tag_list_PKC primary key (tag_id)
 -- ) ;
+
+
+-- -- NFCメニュー画面
+-- create table nfc.menu (
+--   menu_no integer not null
+--   , type varchar(2)
+--   , sort integer default 0
+--   , name varchar(50)
+--   , value varchar(100)
+--   , innerhtml text
+--   , created_id varchar(100)
+--   , updated_id varchar(100)
+--   , created_at timestamp default NOW()
+--   , updated_at timestamp default NOW()
+--   , constraint menu_PKC primary key (menu_no)
+-- ) ;
+
+
+-- 受注明細
+create table juchu_meisai (
+  juchu_id integer not null
+  , rireki_no integer not null
+  , meisai_no integer not null
+  , engineer_id integer
+  , sagyou_start_date timestamp
+  , sagyou_end_date timestamp
+  , kousuu integer
+  , kihon_getsugaku integer
+  , shiharai_kingaku integer
+  , gengaku_tanka integer
+  , chouka_tanka integer
+  , bikou varchar
+  , status char(1) default '0' not null
+  , created_id varchar(100)
+  , updated_id varchar(100)
+  , created_at timestamp default NOW()
+  , updated_at timestamp default NOW()
+  , constraint juchu_meisai_PKC primary key (juchu_id,rireki_no,meisai_no)
+) ;
 
 
 -- 提案
