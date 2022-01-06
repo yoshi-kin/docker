@@ -16,9 +16,6 @@ def pg_conn():
 def test_hello():
     with pg_conn() as conn:
         with conn.cursor(cursor_factory=DictCursor) as cur:
-            sql = "INSERT INTO users(name) values('jessy')"
-            cur.execute(sql)
-            conn.commit()
             sql = "SELECT * FROM users"
             cur.execute(sql)
             users = cur.fetchall()

@@ -3,13 +3,6 @@ create database in_system;
 create schema nfc;
 
 
-create table if not exists users (
-  id serial not null
-  , name character varying not null
-  , constraint users_PKC primary key (id)
-) ;
-
-
 -- -- タグ読み込み履歴
 create table tag_read_history (
   history_no integer not null
@@ -403,23 +396,23 @@ create table NEW_ENTITY1 (
 
 
 
--- -- ログインユーザ
--- create table users (
---   user_id varchar(100) not null
---   , name varchar(100) not null
---   , mail varchar(100) not null
---   , password varchar(200) not null
---   , remenber_token varchar(200)
---   , init_flag varchar(1)
---   , lock_flag varchar(1)
---   , dummy_password varchar(100)
---   , status varchar(1) not null
---   , created_id varchar(100)
---   , updated_id varchar(100)
---   , created_at timestamp default NOW()
---   , updated_at timestamp default NOW()
---   , constraint users_PKC primary key (user_id)
--- ) ;
+-- ログインユーザ
+create table users (
+  user_id varchar(100) not null
+  , name varchar(100) not null
+  , mail varchar(100) not null
+  , password varchar(200) not null
+  , remenber_token varchar(200)
+  , init_flag varchar(1)
+  , lock_flag varchar(1)
+  , dummy_password varchar(100)
+  , status varchar(1) not null
+  , created_id varchar(100)
+  , updated_id varchar(100)
+  , created_at timestamp default NOW()
+  , updated_at timestamp default NOW()
+  , constraint users_PKC primary key (user_id)
+) ;
 
 
 -- 顧客
