@@ -271,33 +271,33 @@ create table teian_history (
 
 
 
--- -- 提案NG
--- create table entry_ng (
---   company_id integer not null
---   , engineer_id integer not null
---   , memo text
---   , status char(1) default '0' not null
---   , created_id varchar(100)
---   , updated_id varchar(100)
---   , created_at timestamp default NOW()
---   , updated_at timestamp default NOW()
---   , constraint entry_ng_PKC primary key (company_id,engineer_id)
--- ) ;
+-- 提案NG
+create table entry_ng (
+  company_id integer not null
+  , engineer_id integer not null
+  , memo text
+  , status char(1) default '0' not null
+  , created_id varchar(100)
+  , updated_id varchar(100)
+  , created_at timestamp default NOW()
+  , updated_at timestamp default NOW()
+  , constraint entry_ng_PKC primary key (company_id,engineer_id)
+) ;
 
 
 
--- -- メール送信先リスト
--- create table mail_send_list (
---   send_id integer default '0' not null
---   , atesaki varchar(6) not null
---   , address varchar(200) not null
---   , status char(1) default '0' not null
---   , created_id varchar(100)
---   , updated_id varchar(100)
---   , created_at timestamp default NOW()
---   , updated_at timestamp default NOW()
---   , constraint mail_send_list_PKC primary key (send_id)
--- ) ;
+-- メール送信先リスト
+create table mail_send_list (
+  send_id integer default '0' not null
+  , atesaki varchar(6) not null
+  , address varchar(200) not null
+  , status char(1) default '0' not null
+  , created_id varchar(100)
+  , updated_id varchar(100)
+  , created_at timestamp default NOW()
+  , updated_at timestamp default NOW()
+  , constraint mail_send_list_PKC primary key (send_id)
+) ;
 
 
 
