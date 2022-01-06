@@ -11,21 +11,21 @@ create table if not exists users (
 ) ;
 
 
--- -- タグ読み込み履歴
--- --* BackupToTempTable
--- drop table tag_read_history cascade;
+-- タグ読み込み履歴
+--* BackupToTempTable
+drop table tag_read_history cascade;
 
--- --* RestoreFromTempTable
--- create table tag_read_history (
---   history_no integer default NEXTVAL(history_no) not null
---   , menu_no integer
---   , tag_id VARCHAR2(200)
---   , created_id varchar(100)
---   , updated_id varchar(100)
---   , created_at timestamp default NOW()
---   , updated_at timestamp default NOW()
---   , constraint tag_read_history_PKC primary key (history_no)
--- ) ;
+--* RestoreFromTempTable
+create table tag_read_history (
+  history_no integer default NEXTVAL(history_no) not null
+  , menu_no integer
+  , tag_id VARCHAR2(200)
+  , created_id varchar(100)
+  , updated_id varchar(100)
+  , created_at timestamp default NOW()
+  , updated_at timestamp default NOW()
+  , constraint tag_read_history_PKC primary key (history_no)
+) ;
 
 
 -- -- タグリスト
