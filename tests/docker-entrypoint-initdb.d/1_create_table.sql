@@ -260,7 +260,7 @@ create table teian_history (
   , company_id integer not null
   , eigyo_id integer not null
   , memo text
-  , result varchar(0)
+  , result varchar(1)
   , error text
   , created_id varchar(100)
   , updated_id varchar(100)
