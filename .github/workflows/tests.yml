@@ -21,20 +21,6 @@ jobs:
   pytest:
     needs: flake8-lint
     runs-on: ubuntu-latest
-    # setup postgres on docker
-    # services:
-    #   postgres:
-    #     image: postgres
-    #     env:
-    #       POSTGRES_USER: postgres
-    #       POSTGRES_PORT: 5432
-    #       POSTGRES_PASSWORD: postgres
-    #       POSTGRES_DB: in_system
-    #     options: >-
-    #       --health-cmd pg_isready
-    #       --health-interval 10s
-    #       --health-timeout 5s
-    #       --health-retries 5
     steps:
       -
         name: Checkout Repository
@@ -47,12 +33,6 @@ jobs:
         run: |
           cd tests
           docker compose up -d --build
-      # - 
-      #   name: Startup Postgres
-      #   run: sudo /etc/init.d/postgresql start
-      # -
-      #   name: Create Table
-      #   run: POSTGRES_PASSWORD=postgres psql -p 5432 -U postgres -d in_system -f tests/sql/create_table.sql
       -
         name: Install Required Library
         run: |
@@ -68,8 +48,10 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: Coverage_report
-          path: htmlcov
+          path: tests/htmlcov
           retention-days: 30
       - 
         name: Remove Coverage
-        run: rm .coverage
+        run: |
+          pwd
+          rm .coverage
