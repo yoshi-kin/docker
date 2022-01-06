@@ -227,17 +227,17 @@ create table user_grant (
 
 
 
--- -- 機能権限
--- create table exec_grant (
---   grant_id varchar(6) default '0' not null
---   , grant_name varchar(100) not null
---   , status char(1) default '0' not null
---   , created_id varchar(100)
---   , updated_id varchar(100)
---   , created_at timestamp default NOW()
---   , updated_at timestamp default NOW()
---   , constraint exec_grant_PKC primary key (grant_id)
--- ) ;
+-- 機能権限
+create table exec_grant (
+  grant_id varchar(6) default '0' not null
+  , grant_name varchar(100) not null
+  , status char(1) default '0' not null
+  , created_id varchar(100)
+  , updated_id varchar(100)
+  , created_at timestamp default NOW()
+  , updated_at timestamp default NOW()
+  , constraint exec_grant_PKC primary key (grant_id)
+) ;
 
 
 
