@@ -1,7 +1,6 @@
 create database in_system;
-create schema nfc;
-
 \c in_system
+create schema nfc;
 
 
 create table if not exists users (
@@ -24,32 +23,32 @@ create table tag_read_history (
 ) ;
 
 
--- -- タグリスト
--- create table nfc.tag_list (
---   tag_id integer not null
---   , place_id varchar(100)
---   , created_id varchar(100)
---   , updated_id varchar(100)
---   , created_at timestamp default NOW()
---   , updated_at timestamp default NOW()
---   , constraint tag_list_PKC primary key (tag_id)
--- ) ;
+-- タグリスト
+create table nfc.tag_list (
+  tag_id integer not null
+  , place_id varchar(100)
+  , created_id varchar(100)
+  , updated_id varchar(100)
+  , created_at timestamp default NOW()
+  , updated_at timestamp default NOW()
+  , constraint tag_list_PKC primary key (tag_id)
+) ;
 
 
--- -- NFCメニュー画面
--- create table nfc.menu (
---   menu_no integer not null
---   , type varchar(2)
---   , sort integer default 0
---   , name varchar(50)
---   , value varchar(100)
---   , innerhtml text
---   , created_id varchar(100)
---   , updated_id varchar(100)
---   , created_at timestamp default NOW()
---   , updated_at timestamp default NOW()
---   , constraint menu_PKC primary key (menu_no)
--- ) ;
+-- NFCメニュー画面
+create table nfc.menu (
+  menu_no integer not null
+  , type varchar(2)
+  , sort integer default 0
+  , name varchar(50)
+  , value varchar(100)
+  , innerhtml text
+  , created_id varchar(100)
+  , updated_id varchar(100)
+  , created_at timestamp default NOW()
+  , updated_at timestamp default NOW()
+  , constraint menu_PKC primary key (menu_no)
+) ;
 
 
 -- 受注明細
