@@ -255,19 +255,19 @@ create table teian (
 
 
 -- 提案履歴
-create table teian_history (
-  teian_id integer not null
-  , company_id integer not null
-  , eigyo_id integer not null
-  , memo text
-  , result varchar(0)
-  , error text
-  , created_id varchar(100)
-  , updated_id varchar(100)
-  , created_at timestamp default NOW()
-  , updated_at timestamp default NOW()
-  , constraint teian_history_PKC primary key (teian_id,company_id,eigyo_id)
-) ;
+-- create table teian_history (
+--   teian_id integer not null
+--   , company_id integer not null
+--   , eigyo_id integer not null
+--   , memo text
+--   , result varchar(0)
+--   , error text
+--   , created_id varchar(100)
+--   , updated_id varchar(100)
+--   , created_at timestamp default NOW()
+--   , updated_at timestamp default NOW()
+--   , constraint teian_history_PKC primary key (teian_id,company_id,eigyo_id)
+-- ) ;
 
 
 
