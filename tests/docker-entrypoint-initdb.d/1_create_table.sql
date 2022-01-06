@@ -1,5 +1,5 @@
 create database in_system;
-CREATE SCHEMA nfc;
+create schema nfc;
 
 \c in_system
 
@@ -24,32 +24,32 @@ create table tag_read_history (
 ) ;
 
 
--- タグリスト
-create table nfc.tag_list (
-  tag_id integer not null
-  , place_id varchar(100)
-  , created_id varchar(100)
-  , updated_id varchar(100)
-  , created_at timestamp default NOW()
-  , updated_at timestamp default NOW()
-  , constraint tag_list_PKC primary key (tag_id)
-) ;
+-- -- タグリスト
+-- create table nfc.tag_list (
+--   tag_id integer not null
+--   , place_id varchar(100)
+--   , created_id varchar(100)
+--   , updated_id varchar(100)
+--   , created_at timestamp default NOW()
+--   , updated_at timestamp default NOW()
+--   , constraint tag_list_PKC primary key (tag_id)
+-- ) ;
 
 
--- NFCメニュー画面
-create table nfc.menu (
-  menu_no integer not null
-  , type varchar(2)
-  , sort integer default 0
-  , name varchar(50)
-  , value varchar(100)
-  , innerhtml text
-  , created_id varchar(100)
-  , updated_id varchar(100)
-  , created_at timestamp default NOW()
-  , updated_at timestamp default NOW()
-  , constraint menu_PKC primary key (menu_no)
-) ;
+-- -- NFCメニュー画面
+-- create table nfc.menu (
+--   menu_no integer not null
+--   , type varchar(2)
+--   , sort integer default 0
+--   , name varchar(50)
+--   , value varchar(100)
+--   , innerhtml text
+--   , created_id varchar(100)
+--   , updated_id varchar(100)
+--   , created_at timestamp default NOW()
+--   , updated_at timestamp default NOW()
+--   , constraint menu_PKC primary key (menu_no)
+-- ) ;
 
 
 -- 受注明細
@@ -215,16 +215,16 @@ create table company_anken (
 
 
 -- -- ユーザ権限
--- create table user_grant (
---   user_id varchar(100) not null
---   , grant_id varchar(1) not null
---   , grant_code varchar(1) not null
---   , created_id varchar(100)
---   , updated_id varchar(100)
---   , created_at timestamp default NOW()
---   , updated_at timestamp default NOW()
---   , constraint user_grant_PKC primary key (user_id,grant_id)
--- ) ;
+create table user_grant (
+  user_id varchar(100) not null
+  , grant_id varchar(1) not null
+  , grant_code varchar(1) not null
+  , created_id varchar(100)
+  , updated_id varchar(100)
+  , created_at timestamp default NOW()
+  , updated_at timestamp default NOW()
+  , constraint user_grant_PKC primary key (user_id,grant_id)
+) ;
 
 
 
