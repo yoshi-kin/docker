@@ -11,21 +11,21 @@ create table if not exists users (
 ) ;
 
 
--- タグ読み込み履歴
---* BackupToTempTable
-drop table tag_read_history cascade;
+-- -- タグ読み込み履歴
+-- --* BackupToTempTable
+-- drop table tag_read_history cascade;
 
---* RestoreFromTempTable
-create table tag_read_history (
-  history_no integer default NEXTVAL(history_no) not null
-  , menu_no integer
-  , tag_id VARCHAR(200)
-  , created_id varchar(100)
-  , updated_id varchar(100)
-  , created_at timestamp default NOW()
-  , updated_at timestamp default NOW()
-  , constraint tag_read_history_PKC primary key (history_no)
-) ;
+-- --* RestoreFromTempTable
+-- create table tag_read_history (
+--   history_no integer default NEXTVAL(history_no) not null
+--   , menu_no integer
+--   , tag_id VARCHAR(200)
+--   , created_id varchar(100)
+--   , updated_id varchar(100)
+--   , created_at timestamp default NOW()
+--   , updated_at timestamp default NOW()
+--   , constraint tag_read_history_PKC primary key (history_no)
+-- ) ;
 
 
 -- -- タグリスト
@@ -64,31 +64,31 @@ create table tag_read_history (
 -- ) ;
 
 
--- -- 受注明細
--- --* BackupToTempTable
--- drop table juchu_meisai cascade;
+-- 受注明細
+--* BackupToTempTable
+drop table juchu_meisai cascade;
 
--- --* RestoreFromTempTable
--- create table juchu_meisai (
---   juchu_id integer not null
---   , rireki_no integer not null
---   , meisai_no integer not null
---   , engineer_id integer
---   , sagyou_start_date timestamp
---   , sagyou_end_date timestamp
---   , kousuu integer
---   , kihon_getsugaku integer
---   , shiharai_kingaku integer
---   , gengaku_tanka integer
---   , chouka_tanka integer
---   , bikou varchar
---   , status char(1) default '0' not null
---   , created_id varchar(100)
---   , updated_id varchar(100)
---   , created_at timestamp default NOW()
---   , updated_at timestamp default NOW()
---   , constraint juchu_meisai_PKC primary key (juchu_id,rireki_no,meisai_no)
--- ) ;
+--* RestoreFromTempTable
+create table juchu_meisai (
+  juchu_id integer not null
+  , rireki_no integer not null
+  , meisai_no integer not null
+  , engineer_id integer
+  , sagyou_start_date timestamp
+  , sagyou_end_date timestamp
+  , kousuu integer
+  , kihon_getsugaku integer
+  , shiharai_kingaku integer
+  , gengaku_tanka integer
+  , chouka_tanka integer
+  , bikou varchar
+  , status char(1) default '0' not null
+  , created_id varchar(100)
+  , updated_id varchar(100)
+  , created_at timestamp default NOW()
+  , updated_at timestamp default NOW()
+  , constraint juchu_meisai_PKC primary key (juchu_id,rireki_no,meisai_no)
+) ;
 
 
 -- -- 提案
