@@ -4,7 +4,7 @@ from psycopg2.extras import DictCursor
 
 def pg_conn():
     setting = {
-        # 'host': 'localhost',
+        'host': 'localhost',
         'port': '5432',
         'dbname': 'in_system',
         'user': 'postgres',
