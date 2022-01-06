@@ -1,5 +1,5 @@
 create database in_system;
-CREATE SCHEMA nfc;
+-- CREATE SCHEMA nfc;
 
 \c in_system
 
