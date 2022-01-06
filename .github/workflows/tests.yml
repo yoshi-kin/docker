@@ -1,0 +1,73 @@
+name: test
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  flake8-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - 
+        name: Checkout Repository
+        uses: actions/checkout@v2
+      - 
+        name: Set up Python
+        uses: actions/setup-python@v2
+      - 
+        name: Flake8 Lint
+        uses: py-actions/flake8@v1
+        with:
+          ignore: "F401"
+  pytest:
+    needs: flake8-lint
+    runs-on: ubuntu-latest
+    # setup postgres on docker
+    # services:
+    #   postgres:
+    #     image: postgres
+    #     env:
+    #       POSTGRES_USER: postgres
+    #       POSTGRES_PORT: 5432
+    #       POSTGRES_PASSWORD: postgres
+    #       POSTGRES_DB: in_system
+    #     options: >-
+    #       --health-cmd pg_isready
+    #       --health-interval 10s
+    #       --health-timeout 5s
+    #       --health-retries 5
+    steps:
+      -
+        name: Checkout Repository
+        uses: actions/checkout@v2
+      -
+        name: Set up Python
+        uses: actions/setup-python@v2
+      - 
+        name: Build Image & Run Container
+        run: docker compose up -d --build
+      # - 
+      #   name: Startup Postgres
+      #   run: sudo /etc/init.d/postgresql start
+      # -
+      #   name: Create Table
+      #   run: POSTGRES_PASSWORD=postgres psql -p 5432 -U postgres -d in_system -f tests/sql/create_table.sql
+      -
+        name: Install Required Library
+        run: |
+          pip install pytest
+          pip install pytest-cov
+          pip install psycopg2
+      -
+        name: Run pytest
+        shell: bash
+        run: pytest
+      -
+        name: Upload result for job pytest
+        uses: actions/upload-artifact@v2
+        with:
+          name: Coverage_report
+          path: htmlcov
+          retention-days: 30
+      - 
+        name: Remove Coverage
+        run: rm .coverage
