@@ -59,4 +59,3 @@ jobs:
           ls -al
           cd tests
           rm .coverage
-          if [ -e __pycache__ ]; then rm -rf __pycache__
