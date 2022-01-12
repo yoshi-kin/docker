@@ -1,7 +1,4 @@
-create database in_system;
 \c in_system
-create schema nfc;
-
 
 -- -- タグ読み込み履歴
 create table tag_read_history (
@@ -209,7 +206,7 @@ create table company_anken (
 -- -- ユーザ権限
 create table user_grant (
   user_id varchar(100) not null
-  , grant_id varchar(1) not null
+  , grant_id varchar(3) not null
   , grant_code varchar(1) not null
   , created_id varchar(100)
   , updated_id varchar(100)
@@ -405,7 +402,7 @@ create table users (
   , remenber_token varchar(200)
   , init_flag varchar(1)
   , lock_flag varchar(1)
-  , dummy_password varchar(100)
+  , dummy_password varchar(200)
   , status varchar(1) not null
   , created_id varchar(100)
   , updated_id varchar(100)
@@ -436,3 +433,5 @@ create table company (
   , updated_at timestamp default NOW()
   , constraint company_PKC primary key (company_id)
 ) ;
+
+
