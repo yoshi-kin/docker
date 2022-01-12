@@ -214,7 +214,7 @@ create table company_anken (
 -- -- ユーザ権限
 create table user_grant (
   user_id varchar(100) not null
-  , grant_id varchar(1) not null
+  , grant_id varchar(3) not null
   , grant_code varchar(1) not null
   , created_id varchar(100)
   , updated_id varchar(100)
