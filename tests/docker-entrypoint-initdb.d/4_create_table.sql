@@ -1,12 +1,4 @@
-create database in_system;
 \c in_system
-create schema nfc;
-
-
-CREATE SEQUENCE seq_user;
-CREATE SEQUENCE seq_company;
-CREATE SEQUENCE seq_engineer;		
-
 
 -- -- タグ読み込み履歴
 create table tag_read_history (
