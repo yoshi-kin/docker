@@ -20,4 +20,8 @@ def test_hello():
             cur.execute(sql)
             users = cur.fetchall()
             print(users)
+            sql = "SELECT * FROM user_grant"
+            cur.execute(sql)
+            grants = cur.fetchall()
+            print(grants)
     assert True
